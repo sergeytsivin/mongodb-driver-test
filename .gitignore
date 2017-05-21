@@ -1,4 +1,6 @@
 /vendor/
 /.idea/
 /composer.phar
-/yii2-app/
+/yii2-app/vendor/
+/yii2-app/assets/
+/yii2-app/runtime/
