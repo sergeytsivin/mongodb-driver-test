@@ -27,4 +27,19 @@ class TestMongoController extends Controller
             echo ".";
         }
     }
+
+    public function actionQuery()
+    {
+        ini_set( "mongodb.debug", "stderr" );
+
+        while ( true )
+        {
+            /** @var Connection $mongodb */
+            $user = ( new \yii\mongodb\Query() )->from( 'users' )
+                ->where( [ 'username' => 'admin' ] )
+                ->one();
+
+            echo ".";
+        }
+    }
 }
