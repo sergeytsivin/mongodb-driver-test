@@ -15,6 +15,10 @@ $config = [
         'mongodb' => [
             'class' => '\yii\mongodb\Connection',
             'dsn' => 'mongodb://mymongo:27017/example',
+            'options' => [
+                'connectTimeoutMS' => 1000,
+                'socketTimeoutMS' => 5000, // set socket timeout to 5 seconds
+            ]
         ],
         'log' => [
             'targets' => [
