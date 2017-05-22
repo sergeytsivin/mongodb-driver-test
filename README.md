@@ -47,4 +47,11 @@ You can run mongo console from within one of the containers:
 
     docker run --rm -it --net mongocluster_mynet -v "$PWD":/usr/src/myapp -w /usr/src/myapp php56-mongodb php rs-initiate.php
 
-Now  mongocluster_mongo_1 should become PRIMARY, and
+Now  mongocluster_mongo_1 should become PRIMARY, because rs-initiate.php connects there.
+
+# Populate database with some records
+
+docker run --rm -it --net mongocluster_mynet -v "$PWD":/usr/src/myapp -w /usr/src/myapp php56-mongodb php rs-test-insert.php
+
+
+

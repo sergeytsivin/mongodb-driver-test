@@ -11,8 +11,6 @@ $mongo = new MongoDB\Client(
     ]
 );
 
-$collection = $mongo->example->users;
-
 $config = [
     "_id" => "rs",
     "members" => [
