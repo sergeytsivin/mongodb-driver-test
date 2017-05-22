@@ -1,0 +1,12 @@
+version: "2"
+
+services:
+  mongo:
+    image: mongo:2.6
+    command: mongod --replSet rs
+    networks:
+      - mynet
+
+networks:
+    mynet:
+      driver: bridge

@@ -27,3 +27,24 @@
 # test yii2-mongo DAO
 
     docker run --name my --rm -it --net mynet -v "$PWD":/usr/src/myapp -w /usr/src/myapp php56-mongodb yii2-app/yii test-mongo/dao
+
+# create mongo cluster (from directory mongo-cluster):
+
+    docker-compose up
+
+In another console:
+
+    docker-compose scale mongo=3
+
+This will create 3 containers mongocluster_mongo_1, mongocluster_mongo_2 and mongocluster_mongo_3. Full container names
+will resolve to IP addresses from wihin the containers
+
+You can run mongo console from within one of the containers:
+
+    docker exec -it mongocluster_mongo_1 mongo
+
+# create replica set:
+
+    docker run --rm -it --net mongocluster_mynet -v "$PWD":/usr/src/myapp -w /usr/src/myapp php56-mongodb php rs-initiate.php
+
+Now  mongocluster_mongo_1 should become PRIMARY, and
