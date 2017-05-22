@@ -3,10 +3,14 @@
 
     docker build -t php56-mongodb .
 
+# create network
+
+    docker network create mynet
+
 # install composer
 
-    docker run --rm -it --net mynet -v "$PWD":/usr/src/myapp -w /usr/src/myapp php56-mongodb composer-setup.php
     curl https://getcomposer.org/installer -o composer-setup.php
+    docker run --rm -it --net mynet -v "$PWD":/usr/src/myapp -w /usr/src/myapp php56-mongodb php composer-setup.php
 
 # install mongodb/mongodb
 
