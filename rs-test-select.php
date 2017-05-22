@@ -14,3 +14,8 @@ $mongo = new MongoDB\Client(
 
 $collection = $mongo->example->users;
 
+while ( true )
+{
+    $doc = $collection->findOne( [ 'username' => 'admin' ] );
+    echo ".";
+}

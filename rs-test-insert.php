@@ -4,7 +4,7 @@
 
 require_once __DIR__ . "/vendor/autoload.php";
 
-$connectionUri = 'mongodb://mongocluster_mongo_2:27017,mongocluster_mongo_3:27017/example?replicaSet=rs&readPreference=primary';
+$connectionUri = 'mongodb://mongocluster_mongo_2:27017/example?replicaSet=rs&readPreference=primary';
 
 echo "Starting\n";
 
