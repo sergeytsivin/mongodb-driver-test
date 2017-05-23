@@ -1,6 +1,6 @@
-/vendor/
+/mongo-client/mongodb/vendor/
 /.idea/
 /composer.phar
-/yii2-app/vendor/
-/yii2-app/assets/
-/yii2-app/runtime/
+/mongo-client/yii2-mongodb/vendor/
+/mongo-client/yii2-mongodb/assets/
+/mongo-client/yii2-mongodb/runtime/
